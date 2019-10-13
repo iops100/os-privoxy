@@ -1,0 +1,51 @@
+<form>
+	<field>
+		<label>Rule order: </label>
+		<id>forward.rulePosition</id>
+		<help><![CDATA[Order rules]]></help>
+		<!-- <style>ui-sortable-handle</style>  -->
+		<type>text</type>
+	</field>
+	<field>
+		<label>Forward Type: </label>
+		<id>forward.ruleType</id>
+		<help><![CDATA[Select forward Socks type.
+Socks5t means Socks5 TOR]]></help>
+		<type>dropdown</type>
+	</field>
+	<field>
+		<label>Target Pattern:</label>
+		<id>forward.targetPattern</id>
+		<help><![CDATA[URL pattern that specifies to which requests (i.e. URLs) this forward rule shall apply.
+Use / to denote "all URLs"]]></help>
+		<type>text</type>
+	</field>
+	<field>
+		<label>Http Parent IP/FQDN: </label>
+		<id>forward.httpParentProxy</id>
+		<help><![CDATA[Addresses in dotted decimal notation or valid DNS names 
+may be "." to denote "no HTTP forwarding"]]></help>
+		<type>text</type>
+	</field>
+	<field>
+		<label>Http Parent Port: </label>
+		<id>forward.httpParentPort</id>
+		<help><![CDATA[TCP ports, i.e. integer values from 1 to 65535]]></help>
+		<type>text</type>
+	</field>
+	<field>
+		<label>Socks Proxy IP/FQDN: </label>
+		<id>forward.socksProxy</id>
+		<help><![CDATA[Only in case of socksx forward
+Addresses in dotted decimal notation or valid DNS names 
+may be "." to denote "no HTTP forwarding"]]></help>
+		<type>text</type>
+	</field>
+	<field>
+		<label>Socks Port: </label>
+		<id>forward.socksPort</id>
+		<help><![CDATA[Only in case of socksx forward
+TCP ports, i.e. integer values from 1 to 65535]]></help>
+		<type>text</type>
+	</field>
+</form>

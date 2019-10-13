@@ -1,0 +1,27 @@
+<model>
+	<mount>//OPNsense/privoxy/miscfiles</mount>
+	<description>Manage Privoxy Files List</description>
+	<version>1.1.0</version>
+	<items>
+		<miscfiles>
+			<miscfile type="ArrayField">
+				<ruleType type="OptionField">
+					<default>actions</default>
+					<OptionValues>
+						<actions>actions</actions>
+						<filter>filter</filter>
+						<trust>trust</trust>
+					</OptionValues>
+					<Required>Y</Required>
+				</ruleType>
+				<targetFile type="TextField">
+					<default></default>
+					<Required>Y</Required>
+				</targetFile>
+				<comment type="TextField">
+					<default></default>
+				</comment>
+			</miscfile>
+		</miscfiles>
+	</items>
+</model>

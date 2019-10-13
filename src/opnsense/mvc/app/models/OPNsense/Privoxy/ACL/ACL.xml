@@ -1,0 +1,10 @@
+<acl>
+    <page-services-privoxy>
+        <name>Services: Privoxy</name>
+        <patterns>
+            <pattern>ui/privoxy/*</pattern>
+            <pattern>api/privoxy/*</pattern>
+            <pattern>diag_logs_privoxy.php</pattern>
+        </patterns>
+    </page-services-privoxy>
+</acl>

@@ -1,0 +1,49 @@
+<model>
+	<mount>//OPNsense/privoxy/forwards</mount>
+	<description>Manage Privoxy Forwards List</description>
+	<version>1.1.0</version>
+	<items>
+		<forwards>
+			<forward type="ArrayField">
+				<rulePosition type="IntegerField">
+					<default>0</default>
+					<MinimumValue>1</MinimumValue>
+					<MaximumValue>999</MaximumValue>
+					<Required>Y</Required>
+				</rulePosition>
+				<ruleType type="OptionField">
+					<default>direct</default>
+					<OptionValues>
+						<direct>direct</direct>
+						<socks4>socks4</socks4>
+						<socks4a>socks4a</socks4a>
+						<socks5>socks5</socks5>
+						<socks5t>socks5t</socks5t>
+					</OptionValues>
+					<Required>Y</Required>
+				</ruleType>
+				<targetPattern type="TextField">
+					<default></default>
+					<Required>Y</Required>
+				</targetPattern>
+				<httpParentProxy type="TextField">
+					<default>.</default>
+					<Required>Y</Required>
+				</httpParentProxy>
+				<httpParentPort type="IntegerField">
+					<default></default>
+					<MinimumValue>0</MinimumValue>
+					<MaximumValue>65535</MaximumValue>
+				</httpParentPort>
+				<socksProxy type="TextField">
+					<default></default>
+				</socksProxy>
+				<socksPort type="IntegerField">
+					<default></default>
+					<MinimumValue>0</MinimumValue>
+					<MaximumValue>65535</MaximumValue>
+				</socksPort>
+			</forward>
+		</forwards>
+	</items>
+</model>

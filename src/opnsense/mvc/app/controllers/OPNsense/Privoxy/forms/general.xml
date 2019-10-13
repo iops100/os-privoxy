@@ -1,0 +1,296 @@
+<form>
+	<field>
+		<label>Enabled</label>
+		<id>general.enabled</id>
+		<help><![CDATA[Enable Privoxy service.]]></help>
+		<type>checkbox</type>
+	</field>
+	<!-- Not simply usable with OPNsense <field>
+		<label>Confs Directory</label>
+		<id>general.confdir</id>
+		<help><![CDATA[The directory where the other configuration files are located.]]></help>
+		<type>text</type>
+	</field> -->
+	<field>
+		<label>Log Directory</label>
+		<id>general.logdir</id>
+		<help><![CDATA[
+The directory where all logging takes place (i.e. where the logfile is located).
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Log File</label>
+		<id>general.logfile</id>
+		<help><![CDATA[The log file to use]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Debug List</label>
+		<id>general.debugLevel</id>
+		<help><![CDATA[
+#        debug     1 # Log the destination for each request Privoxy let through. See also debug 1024.
+#        debug     2 # show each connection status
+#        debug     4 # show I/O status
+#        debug     8 # show header parsing
+#        debug    16 # log all data written to the network
+#        debug    32 # debug force feature
+#        debug    64 # debug regular expression filters
+#        debug   128 # debug redirects
+#        debug   256 # debug GIF de-animation
+#        debug   512 # Common Log Format
+#        debug  1024 # Log the destination for requests Privoxy didn't let through, and the reason why.
+#        debug  2048 # CGI user interface
+#        debug  4096 # Startup banner and warnings.
+#        debug  8192 # Non-fatal errors
+#        debug 32768 # log all data read from the network
+#        debug 65536 # Log the applying actions
+		]]></help>
+		<type>select_multiple</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Listen Interfaces</label>
+		<id>general.listenAddress</id>
+		<help><![CDATA[Select the internal interfaces, such as LAN, where Privoxy listen]]></help>
+		<type>select_multiple</type>
+	</field>
+	<field>
+		<label>Listen localhost</label>
+		<id>general.listenLocalhost</id>
+		<help><![CDATA[Select if Privoxy must listen localhost (Listen Interface have priority.]]></help>
+		<type>checkbox</type>
+	</field>
+	<field>
+		<label>Listen Port</label>
+		<id>general.listenPort</id>
+		<help><![CDATA[Listen port for connections to Privoxy]]></help>
+		<type>text</type>
+	</field>
+	<field>
+		<label>Toggle</label>
+		<id>general.toggle</id>
+		<help><![CDATA[Initial state of "toggle" status.
+If set to 0, Privoxy will start in "toggled off" mode, i.e.
+mostly behave like a normal, content-neutral proxy with both
+ad blocking and content filtering disabled. See
+enable-remote-toggle below.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Enable Remote Toggle</label>
+		<id>general.enableRemoteToggle</id>
+		<help><![CDATA[Whether or not the web-based toggle feature may be used]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Enable Remote Http Toggle</label>
+		<id>general.enableRemoteHttpToggle</id>
+		<help><![CDATA[Whether or not Privoxy recognizes special HTTP headers to change its behaviour.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Enable Edit Actions</label>
+		<id>general.enableEditActions</id>
+		<help><![CDATA[Whether or not the web-based actions file editor may be used]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Enforce Blocks</label>
+		<id>general.enforceBlocks</id>
+		<help><![CDATA[Whether the user is allowed to ignore blocks and can "go there anyway".]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Buffer Limit</label>
+		<id>general.bufferLimit</id>
+		<help><![CDATA[Maximum size of the buffer for content filtering.]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Enable Proxy Authentication Forwarding</label>
+		<id>general.enableProxyAuthenticationForwarding</id>
+		<help><![CDATA[Whether or not proxy authentication through Privoxy should work.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Forwarded Connect Retries</label>
+		<id>general.forwardedConnectRetries</id>
+		<help><![CDATA[How often Privoxy retries if a forwarded connection request fails.]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Accept Intercepted Requests</label>
+		<id>general.acceptInterceptedRequests</id>
+		<help><![CDATA[Whether intercepted requests should be treated as valid.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Allow Cgi Request Crunching</label>
+		<id>general.allowCgiRequestCrunching</id>
+		<help><![CDATA[Whether requests to Privoxy's CGI pages can be blocked or redirected.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Split Large Forms</label>
+		<id>general.splitLargeForms</id>
+		<help><![CDATA[Whether the CGI interface should stay compatible with broken HTTP clients.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Keep Alive Timeout</label>
+		<id>general.keepAliveTimeout</id>
+		<help><![CDATA[Number of seconds after which an open connection will no longer be reused.]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Tolerate Pipelining</label>
+		<id>general.toleratePipelining</id>
+		<help><![CDATA[Whether or not pipelined requests should be served.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Default Server Timeout</label>
+		<id>general.defaultServerTimeout</id>
+		<help><![CDATA[Assumed server-side keep-alive timeout if not specified by the server.]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Socket Timeout</label>
+		<id>general.socketTimeout</id>
+		<help><![CDATA[Number of seconds after which a socket times out if no data is received.]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Trust Info Url</label>
+		<id>general.trustInfoUrl</id>
+		<help><![CDATA[
+A URL to be displayed in the error page that users will see if access to an untrusted page is denied.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Admin Address</label>
+		<id>general.adminAddress</id>
+		<help><![CDATA[
+An email address to reach the Privoxy administrator.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Proxy Info Url</label>
+		<id>general.proxyInfoUrl</id>
+		<help><![CDATA[
+A URL to documentation about the local Privoxy setup, configuration or policies.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Templates Directory</label>
+		<id>general.templdir</id>
+		<help><![CDATA[
+An alternative directory where the templates are loaded from.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Temporary Directory</label>
+		<id>general.temporaryDirectory</id>
+		<help><![CDATA[
+A directory where Privoxy can create temporary files.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Single Threaded</label>
+		<id>general.singleThreaded</id>
+		<help><![CDATA[Whether to run only one server thread.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Hostname</label>
+		<id>general.hostname</id>
+		<help><![CDATA[
+The hostname shown on the CGI pages.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Connection Sharing</label>
+		<id>general.connectionSharing</id>
+		<help><![CDATA[
+Whether or not outgoing connections that have been kept alive
+ should be shared between different incoming connections.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Max Client Connections</label>
+		<id>general.maxClientConnections</id>
+		<help><![CDATA[
+Maximum number of client connections that will be served.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Handle As Empty Doc Returns Ok</label>
+		<id>general.handleAsEmptyDocReturnsOk</id>
+		<help><![CDATA[
+The status code Privoxy returns for pages blocked with
+ +handle-as-empty-document.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Enable Compression</label>
+		<id>general.enableCompression</id>
+		<help><![CDATA[
+Whether or not buffered content is compressed before delivery.]]></help>
+		<type>checkbox</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Compression Level</label>
+		<id>general.compressionLevel</id>
+		<help><![CDATA[
+The compression level that is passed to the zlib library when compressing buffered content.
+Positive number ranging from 0 to 9.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+	<field>
+		<label>Client Header Order</label>
+		<id>general.clientHeaderOrder</id>
+		<help><![CDATA[
+The order in which client headers are sorted before forwarding them.
+		]]></help>
+		<type>text</type>
+		<advanced>true</advanced>
+	</field>
+</form>

@@ -1,0 +1,10 @@
+<menu>
+    <Services>
+      <Privoxy VisibleName="Privoxy" cssClass="fa fa-truck fa-fw">
+          <Settings order="10" url="/ui/privoxy/general/index" />
+          <Forwards order="30" url="/ui/privoxy/forward/index" />
+          <Misc VisibleName="Misc Files" order="40" url="/ui/privoxy/miscfiles/index" />
+          <Log VisibleName="Log File" order="50" url="/diag_logs_privoxy.php"/>
+      </Privoxy>
+    </Services>
+</menu>

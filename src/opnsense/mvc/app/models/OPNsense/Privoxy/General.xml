@@ -1,0 +1,167 @@
+<model>
+	<mount>//OPNsense/privoxy/general</mount>
+	<description>Manage Privoxy proxy tool</description>
+	<version>1.1.0</version>
+	<items>
+		<enabled type="BooleanField">
+			<default>0</default>
+			<Required>Y</Required>
+		</enabled>
+		<!-- Not simply usable with OPNsense <confdir type="TextField"> <default>/usr/local/etc/privoxy</default> 
+			<Required>Y</Required> </confdir> -->
+		<logdir type="TextField">
+			<default>/var/log/privoxy</default>
+			<Required>Y</Required>
+		</logdir>
+		<logfile type="TextField">
+			<default>logfile</default>
+			<Required>Y</Required>
+		</logfile>
+		<debugLevel type="OptionField">
+			<default></default>
+			<multiple>Y</multiple>
+			<OptionValues>
+				<debug1>debug     1</debug1>
+				<debug2>debug     2</debug2>
+				<debug4>debug     4</debug4>
+				<debug8>debug     8</debug8>
+				<debug16>debug    16</debug16>
+				<debug32>debug    32</debug32>
+				<debug64>debug    64</debug64>
+				<debug128>debug   128</debug128>
+				<debug256>debug   256</debug256>
+				<debug512>debug   512</debug512>
+				<debug1024>debug  1024</debug1024>
+				<debug2048>debug  2048</debug2048>
+				<debug4096>debug  4096</debug4096>
+				<debug8192>debug  8192</debug8192>
+				<debug32768>debug 32768</debug32768>
+				<debug65536>debug 65536</debug65536>
+			</OptionValues>
+		</debugLevel>
+		<listenAddress type="InterfaceField">
+			<default></default>
+			<multiple>N</multiple>
+			<AddParentDevices>Y</AddParentDevices>
+			<filters>
+				<enable>/^(?!0).*$/</enable>
+				<type>/(?s)^((?!group).)*$/</type>
+			</filters>
+			<!-- <showvirtualips/> <showips/> -->
+		</listenAddress>
+		<listenLocalhost type="BooleanField">
+			<default>1</default>
+		</listenLocalhost>
+		<listenPort type="IntegerField">
+			<default>8118</default>
+			<MinimumValue>1024</MinimumValue>
+			<MaximumValue>65535</MaximumValue>
+			<Required>Y</Required>
+		</listenPort>
+		<toggle type="IntegerField">
+			<Required>Y</Required>
+			<default>1</default>
+		</toggle>
+		<enableRemoteToggle type="BooleanField">
+			<default>0</default>
+			<Required>Y</Required>
+		</enableRemoteToggle>
+		<enableRemoteHttpToggle type="BooleanField">
+			<default>0</default>
+			<Required>Y</Required>
+		</enableRemoteHttpToggle>
+		<enableEditActions type="BooleanField">
+			<default>0</default>
+			<Required>Y</Required>
+		</enableEditActions>
+		<enforceBlocks type="BooleanField">
+			<default>0</default>
+			<Required>Y</Required>
+		</enforceBlocks>
+		<bufferLimit type="IntegerField">
+			<default>4096</default>
+			<MinimumValue>256</MinimumValue>
+			<MaximumValue>1024000</MaximumValue>
+			<Required>Y</Required>
+		</bufferLimit>
+		<enableProxyAuthenticationForwarding
+			type="BooleanField">
+			<default>0</default>
+			<Required>Y</Required>
+		</enableProxyAuthenticationForwarding>
+		<forwardedConnectRetries type="IntegerField">
+			<Required>Y</Required>
+			<MinimumValue>0</MinimumValue>
+			<MaximumValue>5</MaximumValue>
+			<default>1</default>
+		</forwardedConnectRetries>
+		<acceptInterceptedRequests
+			type="BooleanField">
+			<Required>Y</Required>
+			<default>0</default>
+		</acceptInterceptedRequests>
+		<allowCgiRequestCrunching type="BooleanField">
+			<Required>Y</Required>
+			<default>0</default>
+		</allowCgiRequestCrunching>
+		<splitLargeForms type="BooleanField">
+			<Required>Y</Required>
+			<default>0</default>
+		</splitLargeForms>
+		<keepAliveTimeout type="IntegerField">
+			<Required>Y</Required>
+			<MinimumValue>0</MinimumValue>
+			<MaximumValue>500</MaximumValue>
+			<default>5</default>
+		</keepAliveTimeout>
+		<toleratePipelining type="BooleanField">
+			<Required>Y</Required>
+			<default>1</default>
+		</toleratePipelining>
+		<defaultServerTimeout type="IntegerField">
+			<default></default>
+		</defaultServerTimeout>
+		<socketTimeout type="IntegerField">
+			<Required>Y</Required>
+			<MinimumValue>0</MinimumValue>
+			<MaximumValue>1200</MaximumValue>
+			<default>300</default>
+		</socketTimeout>
+		<trustInfoUrl type="TextField">
+		</trustInfoUrl>
+		<adminAddress type="TextField">
+		</adminAddress>
+		<proxyInfoUrl type="TextField">
+		</proxyInfoUrl>
+		<templdir type="TextField">
+		</templdir>
+		<temporaryDirectory type="TextField">
+		</temporaryDirectory>
+		<singleThreaded type="BooleanField">
+			<default>0</default>
+		</singleThreaded>
+		<hostname type="TextField">
+		</hostname>
+		<connectionSharing type="BooleanField">
+			<default>0</default>
+		</connectionSharing>
+		<maxClientConnections type="IntegerField">
+			<default></default>
+		</maxClientConnections>
+		<handleAsEmptyDocReturnsOk type="BooleanField">
+			<default>0</default>
+		</handleAsEmptyDocReturnsOk>
+		<enableCompression type="BooleanField">
+			<default>0</default>
+		</enableCompression>
+		<compressionLevel type="IntegerField">
+			<MinimumValue>0</MinimumValue>
+			<MaximumValue>9</MaximumValue>
+			<default>0</default>
+		</compressionLevel>
+		<clientHeaderOrder type="TextField">
+		</clientHeaderOrder>
+		<userParams type="TextField">
+		</userParams>
+	</items>
+</model>

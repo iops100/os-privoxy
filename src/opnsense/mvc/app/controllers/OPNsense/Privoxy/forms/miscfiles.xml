@@ -1,0 +1,25 @@
+<form>
+	<field>
+		<label>MiscFiles Type: </label>
+		<id>miscfile.ruleType</id>
+		<help><![CDATA[Select file type:
+actions : The actions file(s) to use
+filter : The filter file(s) to use
+trust : The name of the trust file to use (only one)
+		]]></help>
+		<type>dropdown</type>
+	</field>
+	<field>
+		<label>File Name:</label>
+		<id>miscfile.targetFile</id>
+		<help><![CDATA[File to associate with type selected.
+Use filename without directory]]></help>
+		<type>text</type>
+	</field>
+	<field>
+		<label>Comment:</label>
+		<id>miscfile.comment</id>
+		<help><![CDATA[Explain your file jobs]]></help>
+		<type>text</type>
+	</field>
+</form>
